@@ -1,0 +1,708 @@
+:root {
+  --ink: #102b3a;
+  --green: #1d7d72;
+  --light: #f5f7f4;
+  --paper: #fff;
+  --muted: #5d6c72;
+  --line: #dbe3df;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  background: var(--paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+}
+
+/* Header & Navegación */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.navigation {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 12px;
+  line-height: 1.15;
+  color: var(--muted);
+}
+
+.brand strong {
+  display: block;
+  color: var(--ink);
+}
+
+.brand-mark {
+  font: 600 25px var(--serif);
+  color: var(--green);
+  border-right: 1px solid var(--line);
+  padding-right: 11px;
+}
+
+.main-menu {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.main-menu a:hover,
+.text-link:hover {
+  color: var(--green);
+}
+
+.menu-appointment,
+.menu-toggle {
+  display: none;
+}
+
+/* Botones */
+.button {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 22px;
+  border-radius: 3px;
+  background: var(--ink);
+  color: #fff;
+  font: 600 14px var(--sans);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover {
+  background: var(--green);
+  transform: translateY(-2px);
+}
+
+.button-small {
+  padding: 11px 17px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(115deg, #f3f7f5 0%, #fff 66%);
+  padding: 92px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--green);
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+}
+
+h1 {
+  max-width: 720px;
+  margin-bottom: 25px;
+  font-size: clamp(47px, 6vw, 76px);
+  line-height: 1.04;
+}
+
+h1 em {
+  color: var(--green);
+  font-style: normal;
+}
+
+.lead {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 35px;
+}
+
+.text-link {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.portrait {
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  border-radius: 4px;
+  color: #fff;
+  background: linear-gradient(150deg, rgba(30, 125, 114, 0.2), rgba(9, 35, 49, 0.9)),
+    radial-gradient(circle at 65% 25%, #72a99f 0 7%, transparent 7.5%),
+    linear-gradient(135deg, #b7d2cc, #274a59);
+  box-shadow: 18px 18px 0 #e2ece8;
+}
+
+.portrait:before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 67px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+}
+
+.portrait-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.portrait-copy span {
+  display: block;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.portrait-copy strong {
+  font: 500 29px var(--serif);
+}
+
+.portrait > p {
+  position: absolute;
+  top: 20px;
+  left: 23px;
+  max-width: 170px;
+  font-size: 11px;
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+/* Beneficios / Pilares */
+.benefits {
+  border-block: 1px solid var(--line);
+  background: var(--light);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  padding: 48px 0;
+}
+
+.benefit-number,
+.specialties-grid article span {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.benefits h2 {
+  margin: 12px 0 10px;
+  font: 600 20px var(--sans);
+}
+
+.benefits p,
+.rich-text p,
+.specialties-grid p,
+.contact p,
+.patient-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* Secciones Generales & Sobre el Doctor */
+.section {
+  padding: 105px 0;
+}
+
+h2 {
+  margin-bottom: 24px;
+  font-size: clamp(36px, 4.4vw, 54px);
+  line-height: 1.12;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+
+.rich-text {
+  padding-top: 43px;
+}
+
+.rich-text p {
+  margin-bottom: 17px;
+  font-size: 16px;
+}
+
+.note {
+  padding: 17px;
+  border-left: 3px solid var(--green);
+  background: var(--light);
+  font-size: 13px !important;
+}
+
+/* Instituciones */
+.institutions {
+  margin-top: 78px;
+}
+
+.institutions h3 {
+  margin: 0 0 22px;
+  font: 500 30px var(--serif);
+}
+
+.institutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.institutions-grid a {
+  min-height: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  border: 1px solid var(--line);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.institutions-grid a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(16, 43, 58, 0.08);
+}
+
+.institutions-grid span {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.institutions-grid strong {
+  font: 500 21px var(--serif);
+}
+
+.institutions-grid small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Especialidades */
+.specialties {
+  background: var(--ink);
+  color: #fff;
+}
+
+.specialties .eyebrow {
+  color: #8cd2c9;
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.specialties-grid article {
+  padding: 27px;
+  min-height: 215px;
+  border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+.specialties-grid h3 {
+  margin: 18px 0 11px;
+  font: 500 24px var(--serif);
+}
+
+.specialties-grid p {
+  color: #cfdbdc;
+}
+
+.disclaimer {
+  margin: 28px 0 0;
+  font-size: 12px;
+  color: #b5c8c8;
+}
+
+/* Servicios */
+.services {
+  background: var(--light);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.services-grid article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+  padding: 28px;
+  background: #fff;
+  border-top: 4px solid var(--green);
+}
+
+.services-grid h3 {
+  max-width: 230px;
+  font: 500 24px var(--serif);
+  line-height: 1.2;
+}
+
+.price {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.price-notice,
+.insurance-intro {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Aseguradoras */
+.insurance-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 50px;
+  margin: 35px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.insurance-list li {
+  padding: 17px 0 17px 24px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+  position: relative;
+}
+
+.insurance-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: bold;
+}
+
+/* Pacientes */
+.patient-section {
+  padding-top: 0;
+}
+
+.patient-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 64px;
+  background: var(--light);
+}
+
+.patient-card h2 {
+  margin: 0;
+  font-size: 42px;
+}
+
+/* Contacto */
+.contact {
+  background: #e7f0ed;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact h2 {
+  margin-bottom: 15px;
+}
+
+.contact-box {
+  padding: 34px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(16, 43, 58, 0.1);
+}
+
+.contact-box h3 {
+  font: 500 28px var(--serif);
+}
+
+.contact-box small {
+  display: block;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+code {
+  padding: 2px 4px;
+  background: #edf2ef;
+}
+
+/* Ubicación y Mapa */
+.map-section {
+  padding: 85px 0 0;
+  background: var(--light);
+}
+
+.map-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: end;
+  padding-bottom: 35px;
+}
+
+.map-heading h2 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.map-heading > p {
+  max-width: 350px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.map-section iframe {
+  display: block;
+  width: 100%;
+  height: 430px;
+  border: 0;
+  filter: saturate(0.8);
+}
+
+/* Footer */
+footer {
+  padding: 25px 0;
+  color: #cbd7d6;
+  background: var(--ink);
+  font-size: 12px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* Responsive / Media Queries */
+@media (max-width: 800px) {
+  .desktop-appointment {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    font: 600 14px var(--sans);
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    color: var(--green);
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  .main-menu {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .main-menu.open {
+    display: flex;
+  }
+
+  .menu-appointment {
+    display: inline-flex;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .hero {
+    padding: 63px 0;
+  }
+
+  .hero-grid,
+  .two-columns,
+  .contact-grid,
+  .patient-card {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .portrait {
+    min-height: 390px;
+  }
+
+  .benefits-grid,
+  .specialties-grid,
+  .institutions-grid,
+  .services-grid,
+  .insurance-list {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .benefits-grid {
+    padding: 42px 0;
+  }
+
+  .rich-text {
+    padding-top: 0;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .patient-section {
+    padding-top: 0;
+  }
+
+  .patient-card {
+    padding: 36px;
+  }
+
+  .map-heading {
+    display: block;
+  }
+
+  .map-heading > p {
+    margin-top: 15px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 32px, 1160px);
+  }
+
+  .brand {
+    font-size: 10px;
+  }
+
+  .brand-mark {
+    font-size: 22px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .text-link {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .portrait {
+    min-height: 330px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .map-section {
+    padding-top: 60px;
+  }
+}
