@@ -223,7 +223,7 @@ h1 em {
   font: 500 29px var(--serif);
 }
 
-.portrait > p {
+.portrait>p {
   position: absolute;
   top: 20px;
   left: 23px;
@@ -531,7 +531,7 @@ code {
   font-size: 42px;
 }
 
-.map-heading > p {
+.map-heading>p {
   max-width: 350px;
   margin: 0;
   color: var(--muted);
@@ -565,7 +565,6 @@ footer a:hover {
   color: white;
 }
 
-/* Responsive / Media Queries */
 @media (max-width: 800px) {
   .desktop-appointment {
     display: none;
@@ -658,7 +657,7 @@ footer a:hover {
     display: block;
   }
 
-  .map-heading > p {
+  .map-heading>p {
     margin-top: 15px;
   }
 
@@ -705,4 +704,84 @@ footer a:hover {
   .map-section {
     padding-top: 60px;
   }
+}
+
+/* Botón Flotante de WhatsApp */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.2s ease;
+}
+
+/* Efecto al pasar el cursor */
+.whatsapp-float:hover {
+  background-color: #20ba5a;
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: 70px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(16, 43, 58, 0.2);
+}
+
+/* Flechita decorativa del tooltip hacia la derecha */
+.whatsapp-float-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+/* Mostrar tooltip al pasar el cursor */
+.whatsapp-float:hover .whatsapp-float-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ajuste para pantallas móviles */
+@media (max-width: 480px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+
+  /* En móviles ocultamos el tooltip para que no tape la pantalla */
+  .whatsapp-float-tooltip {
+    display: none;
+  }
+}
+
+
 }

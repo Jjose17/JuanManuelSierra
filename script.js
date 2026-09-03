@@ -1,5 +1,5 @@
 
-const whatsappNumber = "3124233933"; // Tengo que reemplazar con el numero oficial
+const whatsappNumber = "573124233933"; // Tengo que reemplazar con el numero oficial
 const whatsappMessage = "Hola, quisiera obtener información para solicitar una consulta con el Dr. Juan Manuel Sierra La Rotta.";
 
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -18,10 +18,18 @@ menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () =
   menuButton.innerHTML = 'Menú <span>☰</span>';
 }));
 
-document.getElementById("whatsapp-button").addEventListener("click", () => {
+function openWhatsApp() {
   if (!whatsappNumber) {
     alert("Aún falta configurar el número oficial de WhatsApp en el archivo script.js.");
     return;
   }
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener");
+}
+
+document.getElementById("whatsapp-button")?.addEventListener("click", openWhatsApp);
+
+document.getElementById("whatsapp-float")?.addEventListener("click", (e) => {
+  e.preventDefault();
+  openWhatsApp();
 });
+
