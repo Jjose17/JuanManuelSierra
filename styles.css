@@ -390,11 +390,27 @@ h2 {
   background: var(--light);
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+.services-container {
+  text-align: center;
 }
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.service-card-featured {
+  max-width: 520px;
+  width: 100%;
+  text-align: left;
+}
+
+.services .price-notice {
+  margin: 24px auto 0;
+}
+
+
 
 .services-grid article {
   display: flex;
@@ -563,6 +579,77 @@ footer {
 
 footer a:hover {
   color: white;
+}
+
+.benefits h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1.4;
+}
+
+.specialties-grid h5 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8cd2c9;
+  letter-spacing: 0.5px;
+}
+
+.specialties-grid article {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.service-card-featured {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--green) !important;
+  border-radius: 6px;
+  padding: 36px 32px !important;
+  box-shadow: 0 10px 30px rgba(16, 43, 58, 0.05);
+}
+
+.service-badge {
+  display: inline-block;
+  background: #e6f3f0;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.service-features li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.service-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: bold;
 }
 
 @media (max-width: 800px) {
@@ -781,7 +868,4 @@ footer a:hover {
   .whatsapp-float-tooltip {
     display: none;
   }
-}
-
-
 }
