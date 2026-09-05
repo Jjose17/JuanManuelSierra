@@ -301,6 +301,63 @@ h2 {
   font-size: 13px !important;
 }
 
+/* Formación Académica */
+.academic-formation {
+  margin-top: 28px;
+  padding: 22px 24px;
+  background: var(--light);
+  border-left: 3px solid var(--green);
+  border-radius: 4px;
+}
+
+.academic-title {
+  margin: 0 0 14px;
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+}
+
+.academic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.academic-list li {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.academic-year {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.academic-sep {
+  color: var(--muted);
+  margin: 0 3px;
+}
+
+.academic-text {
+  color: #2d3e47;
+}
+
+@media (max-width: 600px) {
+  .academic-formation {
+    padding: 18px 16px;
+  }
+
+  .academic-list li {
+    font-size: 14px;
+  }
+}
+
 /* Instituciones */
 .institutions {
   margin-top: 78px;
