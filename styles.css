@@ -34,14 +34,201 @@ a {
   margin: auto;
 }
 
-/* Header & Navegación */
-.site-header {
-  position: sticky;
+/* ==========================================================================
+   Header Oscuro & Hero Full-Screen Dark Mode
+   ========================================================================== */
+
+/* Header adaptado al fondo oscuro */
+.site-header.dark-header {
+  position: fixed;
   top: 0;
-  z-index: 10;
-  border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.94);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(9, 26, 36, 0.85);
   backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark-header .brand {
+  color: #a3b8cc;
+}
+
+.dark-header .brand strong {
+  color: #ffffff;
+}
+
+.dark-header .brand-mark {
+  color: #4ed3bc;
+  border-right-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-header .main-menu a {
+  color: #a3b8cc;
+}
+
+.dark-header .main-menu a:hover {
+  color: #4ed3bc;
+}
+
+/* Botón Verde Esmeralda */
+.button-emerald {
+  background: #20ba82 !important;
+  color: #091a24 !important;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 12px 24px;
+}
+
+.button-emerald:hover {
+  background: #2ed396 !important;
+  transform: translateY(-2px);
+}
+
+/* Sección Hero Oscura */
+.hero-dark {
+  position: relative;
+  min-height: 100vh;
+  background: #091a24;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.hero-dark-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-dark-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Degradado horizontal para fundir la imagen con el fondo oscuro */
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      #091a24 0%,
+      rgba(9, 26, 36, 0.85) 30%,
+      rgba(9, 26, 36, 0.2) 70%,
+      rgba(9, 26, 36, 0.4) 100%);
+}
+
+.hero-dark-container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-dark-copy {
+  max-width: 620px;
+  color: #ffffff;
+}
+
+.pill-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(78, 211, 188, 0.12);
+  border: 1px solid rgba(78, 211, 188, 0.3);
+  color: #4ed3bc;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.pill-dark span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ed3bc;
+}
+
+.hero-dark h1 {
+  font-family: var(--serif, "Playfair Display", serif);
+  font-size: clamp(40px, 5.2vw, 68px);
+  line-height: 1.08;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+.hero-dark h1 em {
+  color: #4ed3bc;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lead-dark {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #a3b8cc;
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.hero-dark-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.button-dark-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 12px 24px;
+}
+
+.button-dark-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.hero-dark-features {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: #a3b8cc;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 900px) {
+  .hero-dark-bg {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .hero-dark-overlay {
+    background: linear-gradient(180deg,
+        rgba(9, 26, 36, 0.7) 0%,
+        #091a24 100%);
+  }
+
+  .hero-dark-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-dark-features {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .navigation {
@@ -196,16 +383,15 @@ h1 em {
   box-shadow: 18px 18px 0 #e2ece8;
 }
 
-.portrait:before {
-  content: "";
+.portrait img {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 67px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 0;
 }
 
 .portrait-copy {
@@ -216,21 +402,11 @@ h1 em {
 .portrait-copy span {
   display: block;
   font-size: 13px;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 .portrait-copy strong {
   font: 500 29px var(--serif);
-}
-
-.portrait>p {
-  position: absolute;
-  top: 20px;
-  left: 23px;
-  max-width: 170px;
-  font-size: 11px;
-  line-height: 1.4;
-  opacity: 0.7;
 }
 
 /* Beneficios / Pilares */
@@ -258,6 +434,15 @@ h1 em {
   font: 600 20px var(--sans);
 }
 
+.benefits h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1.4;
+  text-align: left;
+}
+
 .benefits p,
 .rich-text p,
 .specialties-grid p,
@@ -283,22 +468,12 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 90px;
-}
-
-.rich-text {
-  padding-top: 43px;
+  align-items: center;
 }
 
 .rich-text p {
   margin-bottom: 17px;
   font-size: 16px;
-}
-
-.note {
-  padding: 17px;
-  border-left: 3px solid var(--green);
-  background: var(--light);
-  font-size: 13px !important;
 }
 
 /* Formación Académica */
@@ -348,60 +523,47 @@ h2 {
   color: #2d3e47;
 }
 
-@media (max-width: 600px) {
-  .academic-formation {
-    padding: 18px 16px;
-  }
-
-  .academic-list li {
-    font-size: 14px;
-  }
-}
-
 /* Instituciones */
 .institutions {
   margin-top: 78px;
 }
 
-.institutions h3 {
-  margin: 0 0 22px;
-  font: 500 30px var(--serif);
+.affiliation-category .category-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.institutions-grid {
+.logos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 20px;
 }
 
-.institutions-grid a {
+.logo-item {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   min-height: 135px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 22px;
-  border: 1px solid var(--line);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.institutions-grid a:hover {
+.logo-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(16, 43, 58, 0.08);
 }
 
-.institutions-grid span {
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.institutions-grid strong {
-  font: 500 21px var(--serif);
-}
-
-.institutions-grid small {
-  color: var(--muted);
-  font-size: 12px;
+.logo-item img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
 }
 
 /* Especialidades */
@@ -423,13 +585,24 @@ h2 {
 
 .specialties-grid article {
   padding: 27px;
-  min-height: 215px;
+  min-height: 250px;
   border: 1px solid rgba(255, 255, 255, 0.19);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .specialties-grid h3 {
   margin: 18px 0 11px;
   font: 500 24px var(--serif);
+}
+
+.specialties-grid h5 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8cd2c9;
+  letter-spacing: 0.5px;
 }
 
 .specialties-grid p {
@@ -461,207 +634,6 @@ h2 {
   max-width: 520px;
   width: 100%;
   text-align: left;
-}
-
-.services .price-notice {
-  margin: 24px auto 0;
-}
-
-
-
-.services-grid article {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 190px;
-  padding: 28px;
-  background: #fff;
-  border-top: 4px solid var(--green);
-}
-
-.services-grid h3 {
-  max-width: 230px;
-  font: 500 24px var(--serif);
-  line-height: 1.2;
-}
-
-.price {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--green);
-}
-
-.price-notice,
-.insurance-intro {
-  max-width: 760px;
-  margin: 24px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-/* Aseguradoras */
-.insurance-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 50px;
-  margin: 35px 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--line);
-}
-
-.insurance-list li {
-  padding: 17px 0 17px 24px;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.45;
-  position: relative;
-}
-
-.insurance-list li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--green);
-  font-weight: bold;
-}
-
-/* Pacientes */
-.patient-section {
-  padding-top: 0;
-}
-
-.patient-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  padding: 64px;
-  background: var(--light);
-}
-
-.patient-card h2 {
-  margin: 0;
-  font-size: 42px;
-}
-
-/* Contacto */
-.contact {
-  background: #e7f0ed;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.contact h2 {
-  margin-bottom: 15px;
-}
-
-.contact-box {
-  padding: 34px;
-  background: #fff;
-  box-shadow: 0 12px 35px rgba(16, 43, 58, 0.1);
-}
-
-.contact-box h3 {
-  font: 500 28px var(--serif);
-}
-
-.contact-box small {
-  display: block;
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-code {
-  padding: 2px 4px;
-  background: #edf2ef;
-}
-
-/* Ubicación y Mapa */
-.map-section {
-  padding: 85px 0 0;
-  background: var(--light);
-}
-
-.map-heading {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
-  align-items: end;
-  padding-bottom: 35px;
-}
-
-.map-heading h2 {
-  margin: 0;
-  font-size: 42px;
-}
-
-.map-heading>p {
-  max-width: 350px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.map-section iframe {
-  display: block;
-  width: 100%;
-  height: 430px;
-  border: 0;
-  filter: saturate(0.8);
-}
-
-/* Footer */
-footer {
-  padding: 25px 0;
-  color: #cbd7d6;
-  background: var(--ink);
-  font-size: 12px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-footer a:hover {
-  color: white;
-}
-
-.benefits h4 {
-  margin: 0 0 12px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--green);
-  line-height: 1.4;
-}
-
-.specialties-grid h5 {
-  margin: 0 0 14px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #8cd2c9;
-  letter-spacing: 0.5px;
-}
-
-.specialties-grid article {
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.service-card-featured {
   position: relative;
   background: #ffffff;
   border: 1px solid var(--line);
@@ -707,6 +679,204 @@ footer a:hover {
   left: 0;
   color: var(--green);
   font-weight: bold;
+}
+
+.price-notice,
+.insurance-intro {
+  max-width: 760px;
+  margin: 24px auto 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Aseguradoras */
+.insurance-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 50px;
+  margin: 35px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.insurance-list li {
+  padding: 17px 0 17px 24px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+  position: relative;
+}
+
+.insurance-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: bold;
+}
+
+/* Pacientes */
+.patient-section {
+  padding-top: 0;
+}
+
+.patient-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 64px;
+  background: var(--light);
+  align-items: center;
+}
+
+.patient-card h2 {
+  margin: 0;
+  font-size: 42px;
+}
+
+/* Contacto */
+.contact {
+  background: #e7f0ed;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact h2 {
+  margin-bottom: 15px;
+}
+
+.contact-box {
+  padding: 34px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(16, 43, 58, 0.1);
+}
+
+.contact-box h3 {
+  font: 500 28px var(--serif);
+}
+
+.contact-box small {
+  display: block;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   Sección de Ubicación Estilo Tarjeta Dividida
+   ========================================================================== */
+.location {
+  padding: 80px 0;
+  background: var(--paper, #ffffff);
+}
+
+.location-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background: #091a24;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.location-info {
+  padding: 48px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-info .eyebrow {
+  color: #4ed3bc;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.location-info h2 {
+  font-family: var(--serif, "Playfair Display", serif);
+  font-size: 38px;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-item svg {
+  color: #4ed3bc;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #a3b8cc;
+}
+
+.contact-item b {
+  display: block;
+  color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.contact-item span {
+  display: block;
+}
+
+.location-button {
+  align-self: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: transparent;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.location-button:hover {
+  background: #ffffff;
+  color: #091a24;
+  border-color: #ffffff;
+}
+
+.location-map {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* ==========================================================================
@@ -916,8 +1086,97 @@ footer a:hover {
   padding: 30px 0;
 }
 
+/* Footer & Botón Flotante */
+footer {
+  padding: 25px 0;
+  color: #cbd7d6;
+  background: var(--ink);
+  font-size: 12px;
+}
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
 
+footer a:hover {
+  color: white;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #20ba5a;
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: 70px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(16, 43, 58, 0.2);
+}
+
+.whatsapp-float-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+.whatsapp-float:hover .whatsapp-float-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   Media Queries Responsivos
+   ========================================================================== */
+@media (max-width: 850px) {
+  .location-card {
+    grid-template-columns: 1fr;
+  }
+
+  .location-info {
+    padding: 32px 24px;
+  }
+
+  .location-map {
+    min-height: 300px;
+  }
+}
 
 @media (max-width: 800px) {
   .desktop-appointment {
@@ -980,39 +1239,18 @@ footer a:hover {
 
   .benefits-grid,
   .specialties-grid,
-  .institutions-grid,
-  .services-grid,
+  .logos-grid,
   .insurance-list {
     grid-template-columns: 1fr;
     gap: 25px;
-  }
-
-  .benefits-grid {
-    padding: 42px 0;
-  }
-
-  .rich-text {
-    padding-top: 0;
   }
 
   .section {
     padding: 75px 0;
   }
 
-  .patient-section {
-    padding-top: 0;
-  }
-
   .patient-card {
     padding: 36px;
-  }
-
-  .map-heading {
-    display: block;
-  }
-
-  .map-heading>p {
-    margin-top: 15px;
   }
 
   .footer-content {
@@ -1039,10 +1277,6 @@ footer a:hover {
     gap: 20px;
   }
 
-  .text-link {
-    text-align: center;
-  }
-
   h1 {
     font-size: 46px;
   }
@@ -1051,79 +1285,6 @@ footer a:hover {
     min-height: 330px;
   }
 
-  .section {
-    padding: 60px 0;
-  }
-
-  .map-section {
-    padding-top: 60px;
-  }
-}
-
-/* Botón Flotante de WhatsApp */
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 58px;
-  height: 58px;
-  background-color: #25d366;
-  color: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.2s ease;
-}
-
-/* Efecto al pasar el cursor */
-.whatsapp-float:hover {
-  background-color: #20ba5a;
-  transform: scale(1.08) translateY(-3px);
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
-}
-
-.whatsapp-float-tooltip {
-  position: absolute;
-  right: 70px;
-  background: var(--ink);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 7px 14px;
-  border-radius: 6px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 14px rgba(16, 43, 58, 0.2);
-}
-
-/* Flechita decorativa del tooltip hacia la derecha */
-.whatsapp-float-tooltip::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -5px;
-  transform: translateY(-50%);
-  border-width: 5px 0 5px 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent var(--ink);
-}
-
-/* Mostrar tooltip al pasar el cursor */
-.whatsapp-float:hover .whatsapp-float-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Ajuste para pantallas móviles */
-@media (max-width: 480px) {
   .whatsapp-float {
     bottom: 20px;
     right: 20px;
@@ -1131,7 +1292,6 @@ footer a:hover {
     height: 52px;
   }
 
-  /* En móviles ocultamos el tooltip para que no tape la pantalla */
   .whatsapp-float-tooltip {
     display: none;
   }

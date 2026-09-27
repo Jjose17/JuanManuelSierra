@@ -1,5 +1,5 @@
 
-const whatsappNumber = "573124233933"; // Tengo que reemplazar con el numero oficial
+const whatsappNumber = "573124483194"; // Tengo que reemplazar con el numero oficial
 const whatsappMessage = "Hola, quisiera obtener información para solicitar una consulta con el Dr. Juan Manuel Sierra La Rotta.";
 
 document.getElementById("year").textContent = new Date().getFullYear();
