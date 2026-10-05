@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Moderación | Dr. Juan Manuel Sierra</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <style>
+        .admin-container {
+            padding-top: 100px;
+            padding-bottom: 60px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: 1px solid var(--line);
+            background: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .tab-btn.active {
+            background: var(--ink);
+            color: #fff;
+            border-color: var(--ink);
+        }
+
+        .admin-review-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .admin-review-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn-approve {
+            background: #20ba82;
+            color: #fff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-reject {
+            background: #f0ad4e;
+            color: #fff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-delete {
+            background: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .badge-status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-pending {
+            background: #fcf8e3;
+            color: #8a6d3b;
+        }
+
+        .badge-approved {
+            background: #dff0d8;
+            color: #3c763d;
+        }
+
+        .badge-rejected {
+            background: #f2dede;
+            color: #a94442;
+        }
+    </style>
+</head>
+
+<body style="background: #f8faf9;">
+    <header class="site-header dark-header">
+        <div class="container navigation">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">JM</span>
+                <span>Panel de Moderación <strong>Dr. Sierra</strong></span>
+            </a>
+            <div id="admin-user-info" style="display: flex; gap: 12px; align-items: center; color: #fff;">
+                <button id="btn-admin-login" class="button button-small button-emerald" type="button">Iniciar Sesión
+                    Admin</button>
+                <button id="btn-admin-logout" class="button button-small button-dark-outline" type="button"
+                    style="display:none;">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container admin-container">
+        <div class="admin-header">
+            <div>
+                <h1>Moderación de Reseñas</h1>
+                <p style="color: var(--muted);">Apruebe o rechace opiniones enviadas por usuarios antes de hacerlas
+                    públicas.</p>
+            </div>
+        </div>
+
+        <div id="admin-auth-guard"
+            style="background: #fff; padding: 40px; border-radius: 12px; text-align: center; border: 1px solid var(--line);">
+            <h3>Acceso Restringido</h3>
+            <p style="color: var(--muted); margin-bottom: 20px;">Debes iniciar sesión con una cuenta de administrador
+                para acceder a la moderación.</p>
+            <button id="btn-admin-login-main" class="button button-emerald" type="button">Iniciar Sesión con
+                Google</button>
+        </div>
+
+        <div id="admin-dashboard" style="display: none;">
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-status="pending">Pendientes (<span
+                        id="count-pending">0</span>)</button>
+                <button class="tab-btn" data-status="approved">Aprobadas (<span id="count-approved">0</span>)</button>
+                <button class="tab-btn" data-status="rejected">Rechazadas (<span id="count-rejected">0</span>)</button>
+            </div>
+
+            <div id="admin-reviews-list">
+                <p style="color: var(--muted);">Cargando panel de moderación...</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>

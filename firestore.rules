@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Reglas para la colección de opiniones
+    match /opiniones/{reviewId} {
+      
+      // 1. Lectura pública: Solamente opiniones aprobadas para visitantes.
+      // Usuarios autenticados o administradores pueden leer para su panel.
+      allow read: if resource.data.status == "approved" || request.auth != null;
+      
+      // 2. Creación / Actualización por Usuario:
+      // Cada usuario solo puede escribir en el documento con su propio UID
+      // y el estado inicial SIEMPRE debe ser 'pending'.
+      allow create, update: if request.auth != null && (
+        (request.resource.data.userId == request.auth.uid && request.resource.data.status == "pending")
+        ||
+        // Administrador autenticado por Custom Claim (admin: true) o Lista Blanca de Servidor
+        (request.auth.token.admin == true || request.auth.token.email in ["chiquibar2007@gmail.com", "doctor.sierra@gmail.com"])
+      );
+
+      // 3. Eliminación: Reservada únicamente para administradores
+      allow delete: if request.auth != null && (
+        request.auth.token.admin == true || 
+        request.auth.token.email in ["chiquibar2007@gmail.com", "doctor.sierra@gmail.com"]
+      );
+    }
+  }
+}

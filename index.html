@@ -18,8 +18,8 @@
   <meta property="og:title" content="Dr. Juan Manuel Sierra La Rotta | Cirujano de Columna" />
   <meta property="og:description"
     content="Especialista en patologías de columna y ortopedia en Bogotá. Clínica del Country, Clínica La Colina e Instituto Roosevelt." />
-  <meta property="og:image" content="https://juan-manuel-sierra.vercel.app/images/JuanManuelSierra.jpg" />
-  <meta property="og:image:secure_url" content="https://juan-manuel-sierra.vercel.app/images/JuanManuelSierra.jpg" />
+  <meta property="og:image" content="https://juan-manuel-sierra.vercel.app/images/JuanManuelSierra.webp" />
+  <meta property="og:image:secure_url" content="https://juan-manuel-sierra.vercel.app/images/JuanManuelSierra.webp" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="700" />
   <meta property="og:image:height" content="952" />
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Dr. Juan Manuel Sierra La Rotta | Cirujano de Columna" />
   <meta name="twitter:description"
     content="Especialista en patologías de la columna vertebral y ortopedia en Bogotá." />
-  <meta name="twitter:image" content="https://juan-manuel-sierra.vercel.app/images/JuanManuelSierra.jpg" />
+  <meta name="twitter:image" content="https://juan-manuel-sierra.vercel.app/images/JuanManuelSierra.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +39,58 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <meta name="google-site-verification" content="m7zWb8lciCkG79n_0KlInwlGbLQmPK7-HpNcXYkNJ9A" />
+  <!-- SEO Técnico: Datos Estructurados Schema.org Physician -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Juan Manuel Sierra La Rotta",
+    "medicalSpecialty": [
+      "OrthopedicSurgery",
+      "SpineSurgery"
+    ],
+    "description": "Médico especialista en Cirugía de Columna Vertebral y Ortopedia en Bogotá. Atiende en la Clínica del Country, Clínica La Colina e Instituto Roosevelt.",
+    "url": "https://juan-manuel-sierra.vercel.app/",
+    "image": "https://juan-manuel-sierra.vercel.app/images/JuanManuelSierra.webp",
+    "telephone": "+573124233933",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrera 18 #82-39, Consultorio 603",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Cundinamarca",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.6678,
+      "longitude": -74.0560
+    },
+    "priceRange": "$$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-265K7C89MY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-265K7C89MY');
+  </script>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#091a24" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+
 </head>
 
 <body>
@@ -76,7 +128,8 @@
     <section class="hero-dark">
       <!-- Capa de imagen de fondo alineada a la derecha -->
       <div class="hero-dark-bg">
-        <img src="images/JuanManuelSierra.jpg" alt="Dr. Juan Manuel Sierra La Rotta" />
+        <img src="images/JuanManuelSierra.webp" fetchpriority="high" decoding="async"
+          alt="Dr. Juan Manuel Sierra La Rotta - Cirujano de Columna" />
         <div class="hero-dark-overlay"></div>
       </div>
 
@@ -90,9 +143,10 @@
           </p>
 
           <div class="hero-dark-actions">
-            <button class="button button-emerald" id="whatsapp-button" type="button">
+            <button class="button button-emerald btn-whatsapp" data-whatsapp-context="Hero" type="button">
               Escribir por WhatsApp <span aria-hidden="true">→</span>
             </button>
+
             <a class="button button-dark-outline" href="#doctor">Conocer al doctor</a>
           </div>
 
@@ -177,13 +231,13 @@
           <div class="category-title">Instituciones</div>
           <div class="logos-grid">
             <div class="logo-item">
-              <img src="images/instituciones/lacolina.jpg" alt="Clinica La Colina">
+              <img src="images/instituciones/lacolina.webp" alt="Clinica La Colina">
             </div>
             <div class="logo-item">
-              <img src="images/instituciones/country.png" alt="Clinica del Country">
+              <img src="images/instituciones/country.webp" alt="Clinica del Country">
             </div>
             <div class="logo-item">
-              <img src="images/instituciones/rooselvelt.png" alt="Instituto Roosevelt">
+              <img src="images/instituciones/rooselvelt.webp" alt="Instituto Roosevelt">
             </div>
           </div>
         </div>
@@ -262,6 +316,287 @@
       </div>
     </section>
 
+    <!-- FASE 6: ¿CUÁNDO CONSULTAR? -->
+    <section class="section when-to-consult" id="cuando-consultar">
+      <div class="container">
+        <p class="eyebrow">GUÍA AL PACIENTE</p>
+        <h2>¿Cuándo consultar a un especialista de columna?</h2>
+        <p class="section-lead">
+          Es recomendable buscar una valoración médica especializada si presenta uno o varios de los siguientes
+          síntomas:
+        </p>
+
+        <div class="symptoms-grid">
+          <article class="symptom-card">
+            <div class="symptom-icon">⚠️</div>
+            <h3>Dolor persistente</h3>
+            <p>Molestia en espalda o cuello que no mejora tras varias semanas o interfiere con sus actividades diarias.
+            </p>
+          </article>
+          <article class="symptom-card">
+            <div class="symptom-icon">⚡</div>
+            <h3>Dolor irradiado (Ciática)</h3>
+            <p>Dolor que se desplaza desde la espalda baja hacia los glúteos, muslos o piernas, o del cuello hacia los
+              brazos.</p>
+          </article>
+          <article class="symptom-card">
+            <div class="symptom-icon">🖐️</div>
+            <h3>Hormigueo o adormecimiento</h3>
+            <p>Sensación de pérdida de sensibilidad o hincadas constantes en extremidades superiores o inferiores.</p>
+          </article>
+          <article class="symptom-card">
+            <div class="symptom-icon">🦾</div>
+            <h3>Pérdida de fuerza</h3>
+            <p>Dificultad para sostener objetos con las manos, tropezones frecuentes o debilidad al caminar.</p>
+          </article>
+          <article class="symptom-card">
+            <div class="symptom-icon">🚑</div>
+            <h3>Síntomas post-trauma</h3>
+            <p>Dolor agudo originado tras un accidente de tránsito, caída de altura u otro evento traumático.</p>
+          </article>
+          <article class="symptom-card">
+            <div class="symptom-icon">🔍</div>
+            <h3>Segunda opinión médica</h3>
+            <p>Cuando requiere evaluar un diagnóstico previo o conocer alternativas antes de un procedimiento indicado.
+            </p>
+          </article>
+        </div>
+
+        <div class="medical-disclaimer-box">
+          <p>ℹ️ <strong>Aviso importante:</strong> Esta información es de carácter general y educativo. No sustituye ni
+            reemplaza una valoración médica presencial individualizada.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 7: PATOLOGÍAS TRATADAS -->
+    <section class="section pathologies" id="patologias">
+      <div class="container">
+        <p class="eyebrow">CONDICIONES CLÍNICAS</p>
+        <h2>Patologías de la columna vertebral</h2>
+        <div class="pathologies-grid">
+          <article class="pathology-card">
+            <h3>Hernia Discal (Lumbar / Cervical)</h3>
+            <p>Desplazamiento del material discal que ejerce compresión sobre los nervios o la médula espinal.</p>
+            <button type="button" class="text-link btn-whatsapp">Consultar por esta condición →</button>
+          </article>
+          <article class="pathology-card">
+            <h3>Estenosis Espinal</h3>
+            <p>Estrechamiento del canal vertebral que comprime las raíces nerviosas y causa dolor al caminar.</p>
+            <button type="button" class="text-link btn-whatsapp">Consultar por esta condición →</button>
+          </article>
+          <article class="pathology-card">
+            <h3>Enfermedad Discal Degenerativa</h3>
+            <p>Desgaste gradual de los discos intervertebrales debido al envejecimiento o sobrecarga.</p>
+            <button type="button" class="text-link btn-whatsapp">Consultar por esta condición →</button>
+          </article>
+          <article class="pathology-card">
+            <h3>Escoliosis y Deformidades</h3>
+            <p>Curvaturas anormales o alteraciones estructurales en la alineación de la columna en jóvenes o adultos.
+            </p>
+            <button type="button" class="text-link btn-whatsapp">Consultar por esta condición →</button>
+          </article>
+          <article class="pathology-card">
+            <h3>Fracturas Vertebrales</h3>
+            <p>Lesiones óseas causadas por traumatismos o debilitamiento por osteoporosis.</p>
+            <button type="button" class="text-link btn-whatsapp">Consultar por esta condición →</button>
+          </article>
+          <article class="pathology-card">
+            <h3>Lumbalgia y Cervicalgia Crónica</h3>
+            <p>Síndromes dolorosos persistentes que requieren una evaluación integral y diagnóstico preciso.</p>
+            <button type="button" class="text-link btn-whatsapp">Consultar por esta condición →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 8: PROCEDIMIENTOS -->
+    <section class="section procedures" id="procedimientos">
+      <div class="container">
+        <p class="eyebrow">TRATAMIENTOS</p>
+        <h2>Procedimientos y Abordajes</h2>
+        <div class="procedures-grid">
+          <article class="procedure-card">
+            <span class="procedure-tag">Cirugía</span>
+            <h3>Cirugía Mínimamente Invasiva</h3>
+            <p>Técnicas con incisiones reducidas diseñadas para preservar tejidos blandos y favorecer una recuperación
+              más ágil cuando está debidamente indicada.</p>
+          </article>
+          <article class="procedure-card">
+            <span class="procedure-tag">Descompresión</span>
+            <h3>Descompresión Neural y Microdiscectomía</h3>
+            <p>Procedimientos orientados a liberar la presión sobre nervios comprimidos por hernias o estrechamiento del
+              canal.</p>
+          </article>
+          <article class="procedure-card">
+            <span class="procedure-tag">Estabilización</span>
+            <h3>Fusión y Artrodesis Vertebral</h3>
+            <p>Técnica para estabilizar segmentos vertebrales inestables o dolorosos en condiciones degenerativas o
+              deformidades.</p>
+          </article>
+          <article class="procedure-card">
+            <span class="procedure-tag">Conservador</span>
+            <h3>Manejo No Quirúrgico e Infiltraciones</h3>
+            <p>Evaluación de tratamientos analgésicos, rehabilitación física especializada y procedimientos guiados por
+              imágenes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 9: ¿CÓMO ES LA CONSULTA? -->
+    <section class="section consultation-steps" id="como-es-la-consulta">
+      <div class="container">
+        <p class="eyebrow">PASO A PASO</p>
+        <h2>¿Cómo es tu primera consulta?</h2>
+        <div class="steps-timeline">
+          <div class="step-item">
+            <span class="step-number">1</span>
+            <h4>Motivo de consulta</h4>
+            <p>Conversamos detalladamente sobre sus síntomas, historia clínica y cómo afecta su calidad de vida.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-number">2</span>
+            <h4>Revisión de imágenes</h4>
+            <p>Examen riguroso de estudios previos (Resonancias, Radiografías, Tomografías).</p>
+          </div>
+          <div class="step-item">
+            <span class="step-number">3</span>
+            <h4>Examen físico</h4>
+            <p>Valoración neurológica y motora en consultorio para corroborar hallazgos diagnósticos.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-number">4</span>
+            <h4>Explicación didáctica</h4>
+            <p>Orientación clara y transparente de las alternativas médicas disponibles.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-number">5</span>
+            <h4>Plan de manejo</h4>
+            <p>Definimos de común acuerdo el siguiente paso más adecuado para su caso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 10: PREGUNTAS FRECUENTES (FAQ) -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <p class="eyebrow">RESOLVEMOS TUS DUDAS</p>
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary>¿Cómo puedo solicitar una cita?</summary>
+            <div class="faq-answer">
+              <p>Puede agendar su cita fácilmente haciendo clic en el botón de WhatsApp en este sitio o llamando
+                directamente a los números de contacto del consultorio.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Dónde atiende el Dr. Juan Manuel Sierra?</summary>
+            <div class="faq-answer">
+              <p>El doctor atiende en su consultorio principal ubicado en la Carrera 18 #82-39, Consultorio 603 en
+                Bogotá, así como en instituciones adscritas como Clínica del Country, Clínica La Colina e Instituto
+                Roosevelt.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Qué debo llevar a mi primera consulta?</summary>
+            <div class="faq-answer">
+              <p>Es indispensable traer sus estudios de imagen recientes (Resonancia Magnética, Radiografías o
+                Tomografías en disco o impresas), lista de medicamentos actuales y resúmenes de tratamientos previos.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Atienden pacientes particulares y por aseguradoras?</summary>
+            <div class="faq-answer">
+              <p>Sí, se ofrece atención particular y se cuenta con relación con pólizas y medicinas prepagadas
+                (Colsanitas, Coomeva, Allianz, Sura, Bolívar, entre otras). Le recomendamos confirmar cobertura antes de
+                su cita.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Puedo solicitar una segunda opinión sobre una cirugía sugerida?</summary>
+            <div class="faq-answer">
+              <p>Por supuesto. Una segunda opinión médica le permite revisar objetivamente los estudios diagnósticos y
+                evaluar si existen alternativas conservadoras o quirúrgicas antes de tomar una decisión.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 11: FORMULARIO DE CONTACTO DIRECTO -->
+    <section class="section contact-form-section" id="formulario-contacto">
+      <div class="container contact-form-grid">
+        <div class="contact-text">
+          <p class="eyebrow">MENSAJE DIRECTO</p>
+          <h2>Solicitud de Información</h2>
+          <p>Si prefiere enviarnos sus datos directamente, diligencie el formulario y nuestro equipo se comunicará a la
+            brevedad en horario de atención.</p>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+          <!-- Campo Honeypot Anti-Spam (Oculto a usuarios reales) -->
+          <div style="display:none;" aria-hidden="true">
+            <input type="text" name="website_hp" id="website_hp" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-name">Nombre completo *</label>
+            <input type="text" id="contact-name" required placeholder="Ej: Maria Rodríguez" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-phone">Teléfono / WhatsApp *</label>
+              <input type="tel" id="contact-phone" required placeholder="Ej: 300 123 4567" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Correo electrónico *</label>
+              <input type="email" id="contact-email" required placeholder="ejemplo@correo.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-reason">Motivo de consulta</label>
+            <select id="contact-reason">
+              <option value="Consulta General">Consulta por primera vez</option>
+              <option value="Segunda Opinion">Segunda opinión médica</option>
+              <option value="Seguimiento">Seguimiento / Control</option>
+              <option value="Otro">Otro motivo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Mensaje breve *</label>
+            <textarea id="contact-message" rows="4" required
+              placeholder="Describa brevemente su consulta o motivo..."></textarea>
+            <div class="form-group">
+              <label for="contact-message">Mensaje breve *</label>
+              <textarea id="contact-message" rows="4" required
+                placeholder="Describa brevemente su consulta..."></textarea>
+              <small style="color: var(--muted); font-size: 12px; margin-top: 4px; display: block;">
+                🔒 <strong>Aviso de Privacidad:</strong> Por favor no incluya datos clínicos sensibles, antecedentes
+                detallados ni números de documento en este formulario.
+              </small>
+            </div>
+
+          </div>
+
+          <button type="submit" id="btn-submit-contact" class="button button-emerald">Solicitar cita por WhatsApp
+            →</button>
+          <p id="contact-status-msg" class="contact-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+
     <section class="section patient-section" id="pacientes">
       <div class="container patient-card">
         <div>
@@ -284,7 +619,7 @@
         <div class="contact-box">
           <h3>¿Desea solicitar una cita?</h3>
           <p>El botón abre WhatsApp con un mensaje listo para enviar.</p>
-          <button class="button" id="whatsapp-button" type="button">
+          <button class="button button-emerald btn-whatsapp" id="whatsapp-button" type="button">
             Escribir por WhatsApp <span aria-hidden="true">→</span>
           </button>
           <small>Respuesta oportuna en días hábiles y horario de consulta.</small>
@@ -323,7 +658,7 @@
                 <path
                   d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 13 13 0 0 0 2.9.7 2 2 0 0 1 1.6 1.9Z" />
               </svg>
-              <p><b>Atención por WhatsApp</b><span>+57 312 448 3194</span></p>
+              <p><b>Atención por WhatsApp</b><span>+57 312 423 3933</span></p>
             </div>
           </div>
           <a class="button button-outline location-button"
@@ -392,9 +727,20 @@
                   <span class="star active" data-value="5">★</span>
                 </div>
               </div>
-              <textarea id="review-comment" rows="3"
+              <textarea id="review-comment" rows="3" maxlength="500"
                 placeholder="Escriba aquí su opinión sobre la atención, claridad, acompañamiento y profesionalismo..."
                 required></textarea>
+
+              <!-- Nuevo Contador y Checkbox -->
+              <div class="review-meta-controls" style="margin-top: 8px; font-size: 13px; color: var(--muted);">
+                <div style="text-align: right;"><span id="char-count">0</span>/500 caracteres</div>
+                <label style="display: flex; gap: 8px; align-items: flex-start; margin-top: 10px; cursor: pointer;">
+                  <input type="checkbox" id="review-consent" required />
+                  <span>Al publicar esta opinión autorizas la publicación de tu nombre, foto de perfil y comentario en
+                    este sitio web tras ser moderados.</span>
+                </label>
+              </div>
+
 
               <div class="form-actions">
                 <button type="submit" id="btn-submit-review" class="button button-small">Publicar opinión</button>
@@ -410,10 +756,41 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-content">
-      <span>© <span id="year"></span> Dr. Juan Manuel Sierra La Rotta</span>
-      <a href="#inicio">Volver arriba ↑</a>
+  <footer
+    style="background: #091a24; color: #ffffff; padding: 48px 0 24px 0; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="container"
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-bottom: 32px; font-size: 14px; color: #a3b8cc;">
+      <div>
+        <strong style="color: #ffffff; font-size: 16px; display: block; margin-bottom: 8px;">Dr. Juan Manuel Sierra La
+          Rotta</strong>
+        <p style="margin: 0; line-height: 1.5;">Cirujano de Columna Vertebral y Ortopedista.<br />Bogotá, Colombia.</p>
+      </div>
+
+      <div>
+        <strong style="color: #ffffff; font-size: 15px; display: block; margin-bottom: 8px;">Ubicación
+          Principal</strong>
+        <p style="margin: 0; line-height: 1.5;">Carrera 18 #82-39, Consultorio 603<br />Edificio Médico, Bogotá</p>
+      </div>
+
+      <div>
+        <strong style="color: #ffffff; font-size: 15px; display: block; margin-bottom: 8px;">Contacto y Citas</strong>
+        <p style="margin: 0; line-height: 1.5;">WhatsApp: +57 312 423 3933<br />Atención previa agendamiento</p>
+      </div>
+
+      <div>
+        <strong style="color: #ffffff; font-size: 15px; display: block; margin-bottom: 8px;">Enlaces Rápidos</strong>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+          <li><a href="#inicio" style="color: #4ed3bc;">Inicio</a></li>
+          <li><a href="#cuando-consultar" style="color: #a3b8cc;">¿Cuándo consultar?</a></li>
+          <li><a href="privacidad.html" style="color: #a3b8cc;">Política de Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container"
+      style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #a3b8cc;">
+      <span>© <span id="year">2026</span> Dr. Juan Manuel Sierra La Rotta. Todos los derechos reservados.</span>
+      <a href="#inicio" style="color: #4ed3bc;">Volver arriba ↑</a>
     </div>
   </footer>
 

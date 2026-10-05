@@ -1,0 +1,18 @@
+{
+    "name": "Dr. Juan Manuel Sierra - Cirujano de Columna",
+    "short_name": "Dr. Sierra",
+    "description": "Consultorio especializado en Cirugía de Columna Vertebral y Ortopedia en Bogotá.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#091a24",
+    "theme_color": "#091a24",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "192x192 512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
